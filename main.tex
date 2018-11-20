@@ -1,7 +1,11 @@
+% ----------
+% Tech report template
+% 
+% ----------
 \documentclass[12pt, letterpaper, twoside]{article}
 \usepackage{geometry}
 \usepackage[utf8]{inputenc}
-\usepackage[british]{babel}
+\usepackage[english]{babel}
 \usepackage[runin]{abstract}
 \usepackage{titling}
 \usepackage{booktabs}
@@ -10,62 +14,25 @@
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{blindtext}
+\usepackage{parskip}
+\usepackage{etoolbox}
 
-\geometry{letterpaper, top=2.2in, headheight=1.7in}
-\date{}
-
-\title{\textbf{Tech Reports\\How to write an effective report}} % Full title of your tech report
-\newcommand{\runningtitle}{How to write an effective report} % Short title
-\author{Your name \and John Doe \and Jane Doe} % Full list of authors
-\newcommand{\runningauthor}{Your name et al.} % Short list of authors
-\newcommand{\affiliation}{Your University} % Affiliation e.g. University or Company
-\newcommand{\department}{Your Department} % Department or Office
-\newcommand{\memoid}{AI Memo 777} % ID of the tech report
-\newcommand{\theyear}{2018} % year of the tech report
-\newcommand{\mydate}{August 08, \theyear} %the date
+\input{preamble.tex}
 
 % ----------
-% fancyhdr setup
+% Variables
 % ----------
 
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
+\title{\textbf{Tech Reports\\How to write an effective report using a long title such that it does not fit in the fancy header}} % Full title of your tech report
+\runningtitle{A short title for your report} % Short title
+\author{My name \and John Doe \and Jane Doe} % Full list of authors
+\runningauthor{My name et al.} % Short list of authors
+\affiliation{My University} % Affiliation e.g. University or Company
+\department{My Department} % Department or Office
+\memoid{AI Memo 420} % ID of the tech report
+\theyear{2018} % year of the tech report
+\mydate{October 24, 2018} %the date
 
-\fancypagestyle{firstpage}
-{
-    \fancyhf{}
-    \fancyhead{%
-        \begin{center}
-            \textsc{\affiliation}\\
-            \textsc{\department}
-        \end{center}
-        \vspace*{0.5in}
-        {\small \memoid} \hfill {\small \mydate}
-    }
-    \fancyfoot[L]{\footnotesize \textbf{\textsc{\affiliation} -- \theyear}}
-}
-\fancyhead[EL]{\small \runningauthor}
-\fancyhead[ER]{\small Page \thepage}
-\fancyhead[OL]{\small Page \thepage}
-\fancyhead[OR]{\small \runningtitle}
-
-\chead{}
-\lfoot{}
-\cfoot{}
-\rfoot{}
-
-% ----------
-
-\providecommand{\keywords}[1]{\noindent \textbf{Keywords:} #1} % keywords definition
-
-\renewcommand{\familydefault}{\sfdefault} % sans-serif font
-\setlength{\parskip}{1em} % 1em skip between paragraphs
-\abslabeldelim{:} % use colon after the run-in 'Abstract' word
-\setlength{\parindent}{0pt} % no indentantion for first page 
-\setlength{\abstitleskip}{-\absparindent} % this is because the abstract package sets \absparindent to \parindent
-
-\pretitle{\Large \begin{center}}
-\posttitle{\\[2ex] \Large \textbf{by}\end{center}}
 
 % ----------
 % actual document
@@ -90,7 +57,10 @@
 \thispagestyle{firstpage}
 
 \pagebreak
-% --- End of first page
+
+% ----------
+% End of first page
+% ----------
 
 \setlength{\parindent}{1.5em} % Redefine indentantion
 \newgeometry{} % Redefine geometries (normal margins)
@@ -109,14 +79,16 @@ Tech Report writing is an art.
 
 Thanks again to \textbf{Person 1} and \textbf{Affiliation A} for their financial support.
 
+% ----------
+% Bibliography
+% ----------
+
 % \bibliography{../biblio.bib}
 % \bibliographystyle{abbrv}
 
 \appendix
 
 \section{An appendix}
-
-%\includegraphics[width=\linewidth,keepaspectratio]{../figs/tree.pdf}
 
 \blindtext
 
@@ -127,4 +99,5 @@ Thanks again to \textbf{Person 1} and \textbf{Affiliation A} for their financial
 \blindenumerate
 
 \end{document}
+
 % ----------
