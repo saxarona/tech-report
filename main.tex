@@ -1,0 +1,130 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage[runin]{abstract}
+\usepackage{titling}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{helvet}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{blindtext}
+
+\geometry{letterpaper, top=2.2in, headheight=1.7in}
+\date{}
+
+\title{\textbf{Tech Reports\\How to write an effective report}} % Full title of your tech report
+\newcommand{\runningtitle}{How to write an effective report} % Short title
+\author{Your name \and John Doe \and Jane Doe} % Full list of authors
+\newcommand{\runningauthor}{Your name et al.} % Short list of authors
+\newcommand{\affiliation}{Your University} % Affiliation e.g. University or Company
+\newcommand{\department}{Your Department} % Department or Office
+\newcommand{\memoid}{AI Memo 777} % ID of the tech report
+\newcommand{\theyear}{2018} % year of the tech report
+\newcommand{\mydate}{August 08, \theyear} %the date
+
+% ----------
+% fancyhdr setup
+% ----------
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancypagestyle{firstpage}
+{
+    \fancyhf{}
+    \fancyhead{%
+        \begin{center}
+            \textsc{\affiliation}\\
+            \textsc{\department}
+        \end{center}
+        \vspace*{0.5in}
+        {\small \memoid} \hfill {\small \mydate}
+    }
+    \fancyfoot[L]{\footnotesize \textbf{\textsc{\affiliation} -- \theyear}}
+}
+\fancyhead[EL]{\small \runningauthor}
+\fancyhead[ER]{\small Page \thepage}
+\fancyhead[OL]{\small Page \thepage}
+\fancyhead[OR]{\small \runningtitle}
+
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+% ----------
+
+\providecommand{\keywords}[1]{\noindent \textbf{Keywords:} #1} % keywords definition
+
+\renewcommand{\familydefault}{\sfdefault} % sans-serif font
+\setlength{\parskip}{1em} % 1em skip between paragraphs
+\abslabeldelim{:} % use colon after the run-in 'Abstract' word
+\setlength{\parindent}{0pt} % no indentantion for first page 
+\setlength{\abstitleskip}{-\absparindent} % this is because the abstract package sets \absparindent to \parindent
+
+\pretitle{\Large \begin{center}}
+\posttitle{\\[2ex] \Large \textbf{by}\end{center}}
+
+% ----------
+% actual document
+% ----------
+\begin{document}
+\maketitle
+
+\begin{abstract}
+    \noindent
+    \blindtext[1]
+
+    \keywords{Keyword1, Keyword2, Keyword3}
+\end{abstract}
+
+\vspace{2.5cm}
+
+{\footnotesize
+    \noindent
+    Special thanks to \textbf{Person 1} and \textbf{Affiliation A} for financial support for this project.
+}
+
+\thispagestyle{firstpage}
+
+\pagebreak
+% --- End of first page
+
+\setlength{\parindent}{1.5em} % Redefine indentantion
+\newgeometry{} % Redefine geometries (normal margins)
+
+\section{Introduction}
+\label{sec:intro}
+
+\blindmathpaper
+
+\section{Conclusions}
+\label{sec:conc}
+
+Tech Report writing is an art.
+
+\section*{Acknowledgements}
+
+Thanks again to \textbf{Person 1} and \textbf{Affiliation A} for their financial support.
+
+% \bibliography{../biblio.bib}
+% \bibliographystyle{abbrv}
+
+\appendix
+
+\section{An appendix}
+
+%\includegraphics[width=\linewidth,keepaspectratio]{../figs/tree.pdf}
+
+\blindtext
+
+\section{Another appendix}
+
+\subsection*{Subsectioning in appendix}
+
+\blindenumerate
+
+\end{document}
+% ----------
